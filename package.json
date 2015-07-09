@@ -1,10 +1,10 @@
 {
-  "name": "prj",
-  "version": "0.0.0",
-  "bin": "cli",
+  "name": "layered",
+  "version": "0.0.1",
+  "main": "index",
   "description": "mizchi's minimum project",
   "scripts": {
-    "watch": "$(npm bin)/watchify -v -t babelify --extension='.es6' -o bundle.js index.es6",
+    "watch": "$(npm bin)/watchify -v -t babelify --extension='.js' -o bundle.js index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,5 +13,8 @@
     "browserify": "^9.0.8",
     "watchify": "^3.1.1",
     "babelify": "^5.0.4"
+  },
+  "browserify": {
+    "transform": "babelify"
   }
 }

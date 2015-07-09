@@ -1,18 +1,25 @@
-# mizchi's minimum frontend project
+# Layered
 
-```
-$ npm install -g browserify watchify
-$ npm install
-```
+Simple modal window manager.
 
-## Commands
+## Example
 
-```
-$ npm run watch # start watchify
-$ npm run open  # open localhost:9966 by GoogleChromeCanary
-```
+```javascript
+window.addEventListener('DOMContentLoaded', () => {
+  let layered = new Layered(document.body);
+  let layer1 = layered.addLayer();
+  let layer2 = layered.addLayer();
 
-and open index.html
+  // touch elemenet
+  layer1.getElement().innerHTML = 'foo';
+  layer2.getElement().innerHTML = 'bar';
+
+  layer2.hide();
+  layer2.show();
+  // layer2.remove();
+  console.log(layered.getActiveLayers());
+});
+```
 
 ## LICENSE
 
